@@ -1,0 +1,11 @@
+type Song = 
+ record {
+   difficulty: text;
+   notes: text;
+   title: text;
+ };
+service : {
+  getSongs: () -> (vec Song) query;
+  getTechniques: () -> (vec text) query;
+  getTips: () -> (vec text) query;
+}
