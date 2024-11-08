@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         displayList(tips, tipsList);
         displayList(techniques, techniquesList);
-        displaySongs(songs);
+        displaySongs(songs, songModal);
 
         setupPrintButton();
     } catch (error) {
@@ -30,7 +30,7 @@ function displayList(items, element) {
     });
 }
 
-function displaySongs(songs) {
+function displaySongs(songs, modal) {
     const songsList = document.getElementById('songsList');
     songs.forEach(song => {
         const col = document.createElement('div');
@@ -53,7 +53,7 @@ function displaySongs(songs) {
             document.querySelector('#songModal .modal-title').textContent = song.title;
             document.getElementById('songNotes').textContent = song.notes;
             document.getElementById('songDifficulty').textContent = song.difficulty;
-            songModal.show();
+            modal.show();
         });
     });
 }
